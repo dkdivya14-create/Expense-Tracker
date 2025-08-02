@@ -1,0 +1,464 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  width: 100%; 
+  margin-left: 0; 
+  box-sizing: border-box; 
+}
+
+.App {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0;
+  box-shadow: none;
+  margin: 0; 
+  flex-grow: 1;
+  box-sizing: border-box; 
+}
+
+.app-header {
+  background-color: #f8f8f8;
+  padding: 15px 30px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid black;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 0;
+  box-sizing: border-box; 
+}
+
+.app-header h1 {
+  color: #000000;
+  margin: 0; 
+  text-align: left;
+  font-size: 1.2em;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+
+.expense-tracker-container {
+  padding: 20px 30px; 
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px; 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.expense-tracker-container h1 {
+  color: #333;
+  margin-bottom: 30px;
+  margin-left: 0; 
+  text-align: left;
+  font-size: 1.8em;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 3px;
+  margin-left: 0; 
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 25px 35px;
+  border-radius: 10px;
+  text-align: left;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #777;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #333;
+}
+
+.Charts {
+  display: flex;
+  gap: 1%;
+}
+
+.Expense-chart{
+  position: relative;
+  margin: auto; 
+  flex-grow: 1;
+  margin-left: 3%; 
+
+}
+.chart-data1{
+  position: relative;
+  margin: auto; 
+  margin-left: -50%; 
+
+}
+.Expense-tracker {
+  position: relative;
+  margin-right: 0;
+  margin-right: 10%; 
+}
+.chart-data2{
+  position: relative;
+  margin: auto; 
+  margin-left: -150%; 
+
+}
+.filter-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-left: 0;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.left-section-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input-container {
+  position: relative;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 10px 10px 35px; 
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23888"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 18px 18px;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #6a5acd;
+  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
+}
+
+.category-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.category-button {
+  background-color: white;
+  color: #555;
+  border: 1px solid #e0e0e0;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  gap: 15px; 
+}
+
+.category-button:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+.category-button.active {
+  background-color: #6a5acd;
+  color: white;
+  border-color: #6a5acd;
+  font-weight: normal;
+  box-shadow: none;
+}
+
+.category-button::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.category-button:nth-child(2)::before { 
+  background-image: url("C:\Users\G YOGESWAR PRASAD\Desktop\react\vite-project\src\food-icon.png");
+}
+
+.category-button:nth-child(3)::before { 
+  background-image: url("C:\Users\G YOGESWAR PRASAD\Desktop\react\vite-project\src\grocery-icon.png");
+}
+
+.category-button:nth-child(4)::before { 
+  background-image: url("C:\Users\G YOGESWAR PRASAD\Desktop\react\vite-project\src\travel-icon.png");
+}
+
+.category-button:nth-child(5)::before { 
+  background-image: url("C:\Users\G YOGESWAR PRASAD\Desktop\react\vite-project\src\health-icon.png");
+}
+
+.category-button.active::before {
+  filter: invert(100%) brightness(200%);
+}
+
+.action-button {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.action-button:hover {
+  background-color: #5a4ac9;
+}
+
+.expense-list-section {
+  padding: 20px 0px;
+}
+
+.section-title {
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  margin-left: 30px; 
+  text-align: left;
+}
+
+.expenses-table-container {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  margin-left: 70px; 
+  margin-right: 100px; 
+  padding: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+  color: #333;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+table th {
+  background-color: #f8f8f8;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+table tbody tr:hover {
+  background-color: #fbfbfb;
+}
+
+.no-expenses {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-style: italic;
+}
+
+.table-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.table-action-button {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+  justify-content: center; 
+}
+
+.edit-button {
+  background-color: rgba(64, 196, 236, 0.354);
+  color: black;
+  border: 1px solid black;
+  padding-left: 25px; 
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0L15.13 6.69l3.75 3.75 2.83-2.84z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 16px 16px;
+}
+
+.edit-button:hover {
+  background-color: white;
+}
+
+.delete-button {
+  background-color: rgb(246, 181, 181);
+  color: black;
+  border: 1px solid black;
+  padding-left: 25px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 16px 16px;
+}
+
+.delete-button:hover {
+  background-color: black;
+  color: white;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>');
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+  border: 1px solid #333;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: black;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: Black;
+  padding: 0;
+}
+
+.modal-close-button:hover {
+  color: black;
+}
+
+.modal-body label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: black;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="date"],
+.modal-body input[type="number"],
+.modal-body select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: white;
+  color: black;
+}
+
+.modal-body input::placeholder {
+  color: #888;
+}
+
+.modal-body select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23f8f8f8" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 30px;
+}
+
+
+.modal-body button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-body button[type="submit"]:hover {
+  background-color: #5a4ac9;
+}
